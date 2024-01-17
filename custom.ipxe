@@ -10,7 +10,7 @@ set url https://github.com/kairos-io/kairos/releases/download/v2.5.0
 set kernel kairos-alpine-3.19-standard-amd64-generic-v2.5.0-k3sv1.29.0+k3s1-kernel
 set initrd kairos-alpine-3.19-standard-amd64-generic-v2.5.0-k3sv1.29.0+k3s1-initrd
 set rootfs kairos-alpine-3.19-standard-amd64-generic-v2.5.0-k3sv1.29.0+k3s1.squashfs
-set iso kairos-alpine-3.19-standard-amd64-generic-v2.5.0-k3sv1.29.0+k3s1.iso
+set iso kairos-alpine-3.19-standard-amd64-generic-v2.5.0-k3sv1.29.0+k3s1-ipxe.iso
 
 # Configure interface
 ifconf
