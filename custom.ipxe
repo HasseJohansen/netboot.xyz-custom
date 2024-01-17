@@ -6,7 +6,16 @@
 :start
 echo Hello world!
 sleep 10
-goto custom_exit
+set url https://github.com/kairos-io/kairos/releases/download/v2.5.0
+set kernel kairos-alpine-3.19-standard-amd64-generic-v2.5.0-k3sv1.29.0+k3s1-kernel
+set initrd kairos-alpine-3.19-standard-amd64-generic-v2.5.0-k3sv1.29.0+k3s1-initrd
+set rootfs kairos-alpine-3.19-standard-amd64-generic-v2.5.0-k3sv1.29.0+k3s1.squashfs
 
-:custom_exit
-exit 0
+# Configure interface
+ifconf
+
+# set config https://example.com/machine-config
+# set cmdline extra.values=1
+kernel ${url}/${kernel} initrd=${initrd} rd.neednet=1 ip=dhcp rd.cos.disable root=live:${url}/${rootfs} netboot nodepair.enable config_url=${config} console=tty1 console=ttyS0 ${cmdline}
+initrd ${url}/${initrd}
+boot
