@@ -18,7 +18,7 @@ ifconf
 # set config https://example.com/machine-config
 # set cmdline extra.values=1
 kernel ${url}/${kernel}
-imgargs initrd=${initrd} rd.neednet=1 ip=dhcp rd.cos.disable root=live:${url}/${rootfs} netboot nodepair.enable config_url=${config} console=tty1 console=ttyS0 ${cmdline}
+imgargs initrd=${url}/${initrd} rd.neednet=1 ip=dhcp rd.cos.disable root=live:${url}/${rootfs} netboot nodepair.enable config_url=${config} console=tty1 console=ttyS0 ${cmdline}
 #initrd ${url}/${initrd}
 #kernel https://boot.netboot.xyz/memdisk raw iso
 #initrd ${url}/${iso}
