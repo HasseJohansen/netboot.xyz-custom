@@ -17,7 +17,7 @@ ifconf
 
 # set config https://example.com/machine-config
 # set cmdline extra.values=1
-kernel ${url}/${kernel} initrd=${initrd} rd.neednet=1 ip=dhcp rd.cos.disable root=live:${url}/${rootfs} netboot nodepair.enable config_url=${config} console=tty1 console=ttyS0 ${cmdline}
+kernel ${url}/${kernel} initrd=${initrd} printk.devkmsg=on slab_nomerge pti=on console=ttyS0 console=tty0 init_on_alloc=1 init_on_free=1 consoleblank=0 nvme_core.io_timeout=4294967295 rd.neednet=1 ip=dhcp rd.cos.disable root=live:${url}/${rootfs} netboot nodepair.enable config_url=${config} console=tty1 console=ttyS0 ${cmdline}
 initrd ${url}/${initrd}
 #initrd ${url}/${initrd}
 #kernel https://boot.netboot.xyz/memdisk raw iso
